@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Quote Generator</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="quote-container">
+		<p id="quote"></p>
+	</div>
+
+	<script>
+		const quotes = [
+			"Be yourself; everyone else is already taken.",
+			"The future belongs to those who believe in the beauty of their dreams.",
+			"Believe you can and you're halfway there.",
+			"It does not matter how slowly you go as long as you do not stop.",
+			"Success is not final, failure is not fatal: It is the courage to continue that counts.",
+			"Don't watch the clock; do what it does. Keep going.",
+			"Keep your eyes on the stars, and your feet on the ground.",
+			"Life is what happens when you're busy making other plans.",
+			"Always remember that you are absolutely unique. Just like everyone else.",
+			"The best way to predict your future is to create it."
+		];
+
+		const colors = [
+			"rgb(255, 105, 180)",
+			"rgb(155, 89, 182)",
+			"rgb(255, 235, 59)",
+			"rgb(0, 188, 212)",
+			"rgb(255, 99, 71)",
+			"rgb(82, 190, 128)",
+			"rgb(255, 150, 50)",
+			"rgb(100, 149, 237)",
+			"rgb(150, 100, 237)",
+			"rgb(200, 150, 50)"
+		];
+
+		let currentQuoteIndex = 0;
+		let currentColorIndex = 0;
+
+		setInterval(() => {
+			document.getElementById("quote").innerText = quotes[currentQuoteIndex];
+			document.body.style.backgroundColor = colors[currentColorIndex];
+			currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+			currentColorIndex = (currentColorIndex + 1) % colors.length;
+		}, 1000);
+	</script>
+</body>
+</html>
